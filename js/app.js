@@ -21,15 +21,17 @@ $(document).ready(function () {
     }
 
     // open connection
-    var connection = new WebSocket('ws://chattapp.nodejitsu.com:80');
+    var connection = new WebSocket('ws://secure-taiga-8058.herokuapp.com');
 
     connection.onopen = function () {
+
         // first we want users to enter their names
         input.removeAttr('disabled');
         status.text('Choose name:');
     };
 
     connection.onerror = function (error) {
+        console.log(error);
         // just in there were some problems with conenction...
         content.html($('<p>', { text: 'Sorry, but there\'s some problem with your '
                                     + 'connection or the server is down.' } ));

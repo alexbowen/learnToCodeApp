@@ -4,13 +4,12 @@
   "contributors" : [
     {
       "name" : "Alex Bowen",
-      "email" : "alex.bowen@marks-and-spencer.co.uk"
+      "email" : "alex.bowen@alexbowen123@googlemail.com"
     }
   ],
   "dependencies": {
      "socket.io" : "0.9.x",
-     "express"   : "3.0.x",
-
+     "express"   : "3.0.x"
   },
   "devDependencies": {
      "mocha"           : "1.7.x",
@@ -22,5 +21,8 @@
       "node"  : "0.8.x",
       "npm"   : "1.1.x",
       "websocket" : "1.0..x"
+  },
+    "scripts" : {
+      "test" : "mocha-phantomjs http://localhost:8000/test.html"
   }
 }
