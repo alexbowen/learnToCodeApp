@@ -6,10 +6,12 @@ header h1 { margin:16px;font-size:20px;}
 header img {position:absolute;top:0px;right:20px;}
 
 .profile {width:56%;float:left;margin:2%;position:relative;}
+.profile p span {width:80px;margin-right:10px;display:inline-block;color:#666666;}
+.profile-container {margin:5px 10px 15px;}
 .profile ul {list-style-type:none;}
 .profile ul li {display:inline;}
 .profile img {float:left;margin:0 10px;}
-.profile input[type='text'] {position:absolute;bottom:0;left:0;width:92%;margin:2%;padding:2%;height:60px;}
+.profile input[type='text'] {position:absolute;bottom:0;left:0;width:92%;margin:2%;padding:2%;height:20px;outline:none;}
 .chat { width:36%;margin:2% 2% 2% 1%;float:left;position:relative; }
 .chat #content { height:240px; }
 .profile, .chat {height:360px;}
@@ -23,10 +25,14 @@ footer ul {width:100%;list-style-type:none;}
 footer ul > * {float:left;padding:20px;}
 footer ul li.copyright {float:right;}
 
-/*rounded corners*/
+/*CSS3 rounded corners*/
 .profile, .chat, #chat-input {border-radius:20px;}
 
-/*gradients*/
+/*CSS3 gradients*/
+body {
+	background: -webkit-linear-gradient(top, #eeeeee, #bbbbbb);
+}
+
 section h2 
 {
 	border-top-left-radius:20px;

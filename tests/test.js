@@ -1,12 +1,14 @@
-describe("Page Loading", function () {
-    
-    var logo = document.getElementById('loading-text');
-    it("loading logo is in the DOM", function () {
-        expect(logo).to.not.equal(null);
+describe("Chat Application", function () {
+
+    var title = $('h1').text();
+
+    var profile = $('#profile');
+
+    it("has correct title", function () {
+        expect(title).to.equal('Chat Application');
     });
 
-    var titlebar = document.getElementById('afa-loading-titlebar');
-    it("loading title bar is in the DOM", function () {
-        expect(titlebar).to.not.equal(null);
+    it("has profile section", function () {
+        expect(profile).to.be.a('object');
     });
 });
