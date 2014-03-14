@@ -1,0 +1,26 @@
+{
+  "name": "chatapp",
+  "version": "0.0.1",
+  "contributors" : [
+    {
+      "name" : "Alex Bowen",
+      "email" : "alex.bowen@marks-and-spencer.co.uk"
+    }
+  ],
+  "dependencies": {
+     "socket.io" : "0.9.x",
+     "express"   : "3.0.x",
+
+  },
+  "devDependencies": {
+     "mocha"           : "1.7.x",
+     "chai"            : "1.5.0",
+     "phantomjs"       : "1.8.x",
+     "mocha-phantomjs" : "2.0.x"
+  },
+  "engines": {
+      "node"  : "0.8.x",
+      "npm"   : "1.1.x",
+      "websocket" : "1.0..x"
+  }
+}

@@ -1,0 +1,63 @@
+<!DOCTYPE HTML>
+<html manifest="" lang="en-US">
+<head>
+    <title>Customer Client Test Suite</title>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-touch-fullscreen" content="yes">
+
+    <link rel="stylesheet" href="node_modules/mocha/mocha.css" />
+    <link rel="stylesheet" type="text/css" href="resources/css/app.css">
+    <link rel="stylesheet" type="text/css" href="resources/css/custom.css">
+
+    <script type="text/javascript" src="touch/sencha-touch-all-debug.js"></script>
+    <script type="text/javascript" src="cordova-2.2.0.js"></script>
+    <script type="text/javascript" src="lib/socket.io-client/dist/socket.io.js"></script>
+    <script type="text/javascript" src="app.js"></script>
+
+    <script src="node_modules/mocha/mocha.js"></script>
+    <script src="node_modules/chai/chai.js"></script>
+    <script src="lib/require/require.js"></script>
+
+    <script>
+        mocha.ui('bdd'); 
+        mocha.reporter('html');
+        mocha.setup({globals: ['AFA', 'ExtBox1'], timeout : 3000});
+        var expect = chai.expect;
+
+        requirejs.config({
+            baseUrl: './tests',
+            paths: {
+                lib: '../lib'
+            }
+        });
+
+        require(['lib/require/domReady'], function (domReady) {
+            console.log('dom ready');
+            require([
+                'bdd/test'
+            ], function () {
+                console.log('running tests');
+                window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="mocha"></div>
+
+    <canvas id="afa-customer-location" class="afa-customer-location" width="200" height="80" style="z-index:10000"></canvas>
+    <div id="loading-text">
+        <h1 class="afa-logo" id="afa-loading-logo">M&S</h1>
+        <p class="afa-titlebar" id="afa-loading-titlebar">Intelligent Shop Assistant Call</p>
+    </div>
+    <div id="logo-container"><div id="logo"></div></div>
+    <div id="appLoadingIndicator">
+        <div></div>
+        <div></div>
+        <div></div>
+    </div>
+</body>
+</html>
