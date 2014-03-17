@@ -10,7 +10,6 @@
     <link rel="stylesheet" type="text/css" href="css/main.css">
 
     <script type="text/javascript" src="js/jquery.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
 
     <script src="node_modules/mocha/mocha.js"></script>
     <script src="node_modules/chai/chai.js"></script>
@@ -70,27 +69,6 @@
                     expect(chatTitle.css('font-family')).to.equal('tahoma');
                     expect(chatTitle.css('font-size')).to.equal('20px');
                     expect(chatTitle.css('color')).to.equal('rgb(255, 255, 255)');
-                });
-            });
-
-            describe("Chat Application connected", function () {
-
-                it("prompts user for their name", function () {
-                    expect(chatApp).to.be.a('object');
-
-                    chatApp.connected();
-
-                    var statusText = $('#status').text();
-
-                    expect(statusText).to.equal('Choose name:');
-                });
-            });
-
-            describe("Chat Application sendMessage", function () {
-
-                it("you cannot send an empty message", function () {
-                    expect(chatApp).to.be.a('object');
-                    expect(chatApp.sendMessage('')).to.equal(false);
                 });
             });
 
