@@ -49,26 +49,26 @@
 
                 var title = $('h1');
 
-                it("title is black 24px tahoma font", function () {
+                it("title is white 24px tahoma font", function () {
                     expect(title.css('font-family')).to.equal('tahoma');
                     expect(title.css('font-size')).to.equal('24px');
-                    expect(title.css('color')).to.equal('rgb(0, 0, 0)');
+                    expect(title.css('color')).to.equal('rgb(255, 255, 255)');
                 });
 
                 var profileTitle = $('#profile h2');
 
-                it("profile title is black 20px tahoma font", function () {
+                it("profile title is white 20px tahoma font", function () {
                     expect(profileTitle.css('font-family')).to.equal('tahoma');
                     expect(profileTitle.css('font-size')).to.equal('20px');
-                    expect(profileTitle.css('color')).to.equal('rgb(0, 0, 0)');
+                    expect(profileTitle.css('color')).to.equal('rgb(255, 255, 255)');
                 });
 
                 var chatTitle = $('#chat h2');
 
-                it("chat title is black 20px tahoma font", function () {
+                it("chat title is white 20px tahoma font", function () {
                     expect(chatTitle.css('font-family')).to.equal('tahoma');
                     expect(chatTitle.css('font-size')).to.equal('20px');
-                    expect(chatTitle.css('color')).to.equal('rgb(0, 0, 0)');
+                    expect(chatTitle.css('color')).to.equal('rgb(255, 255, 255)');
                 });
             });
 
@@ -88,7 +88,7 @@
         <h2>Profile</h2>
         <div>
             <img src="img/alex.jpg" width="150" height="180" />
-            <h3>Profile</h3>
+            <h3>About me</h3>
             <div class="profile-container">
                 <p><span>Name</span>Alex Bowen</p>
                 <p><span>Age</span>40</p>
