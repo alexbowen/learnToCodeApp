@@ -44,33 +44,6 @@
                 });
             });
 
-            describe("Chat Application Style", function () {
-
-                var title = $('h1');
-
-                it("title is black 24px tahoma font", function () {
-                    expect(title.css('font-family')).to.equal('tahoma');
-                    expect(title.css('font-size')).to.equal('24px');
-                    expect(title.css('color')).to.equal('rgb(255, 255, 255)');
-                });
-
-                var profileTitle = $('#profile h2');
-
-                it("profile title is black 20px tahoma font", function () {
-                    expect(profileTitle.css('font-family')).to.equal('tahoma');
-                    expect(profileTitle.css('font-size')).to.equal('20px');
-                    expect(profileTitle.css('color')).to.equal('rgb(255, 255, 255)');
-                });
-
-                var chatTitle = $('#chat h2');
-
-                it("chat title is black 20px tahoma font", function () {
-                    expect(chatTitle.css('font-family')).to.equal('tahoma');
-                    expect(chatTitle.css('font-size')).to.equal('20px');
-                    expect(chatTitle.css('color')).to.equal('rgb(255, 255, 255)');
-                });
-            });
-
             window.mochaPhantomJS ? mochaPhantomJS.run() : mocha.run();
         });
     </script>
@@ -78,48 +51,48 @@
 <body>
     <div id="mocha"></div>
 
-        <header>
-            <h1>Chat Application</h1>
-            <img src="img/logo.png" width="84" height="60" />
-        </header>
-        
-        <section class="profile" id="profile">
-            <h2>Profile</h2>
-            <div>
-                <img src="img/alex.jpg" width="150" height="180" />
-                <h3>Profile</h3>
-                <div class="profile-container">
-                    <p><span>Name</span>Alex Bowen</p>
-                    <p><span>Age</span>40</p>
-                    <p><span>Hometown</span>Brighton</p>
-                    <p><span>Gender</span>Male</p>
-                </div>
-                <h3>Interests</h3>
-                <div class="profile-container">
-                    <ul>
-                        <li>interest 1</li>
-                        <li>interest 2</li>
-                        <li>interest 3</li>
-                    </ul>
-                </div>
+    <header>
+        <h1>Chat Application</h1>
+        <img src="img/logo.png" width="84" height="60" />
+    </header>
+    
+    <section class="profile" id="profile">
+        <h2>Profile</h2>
+        <div>
+            <img src="img/alex.jpg" width="150" height="180" />
+            <h3>Profile</h3>
+            <div class="profile-container">
+                <p><span>Name</span>Alex Bowen</p>
+                <p><span>Age</span>40</p>
+                <p><span>Hometown</span>Brighton</p>
+                <p><span>Gender</span>Male</p>
             </div>
-            <input type="text" id="chat-input" disabled="disabled" />
-        </section>
-
-        <section class="chat" id="chat">
-            <h2>Chat</h2>
-            <div>
-                <div id="content"></div>
+            <h3>Interests</h3>
+            <div class="profile-container">
+                <ul>
+                    <li>interest 1</li>
+                    <li>interest 2</li>
+                    <li>interest 3</li>
+                </ul>
             </div>
-            <span id="status">Connecting...</span>
-        </section>
+        </div>
+        <input type="text" id="chat-input" disabled="disabled" />
+    </section>
 
-        <footer class="footer">
-            <ul>
-                <li>Built by <a href="#">your agency</a></li>
-                <li class="copyright">&copy 2014</li>
-            </ul>
-        </footer>
+    <section class="chat" id="chat">
+        <h2>Chat</h2>
+        <div>
+            <div id="content"></div>
+        </div>
+        <span id="status">Connecting...</span>
+    </section>
+
+    <footer class="footer">
+        <ul>
+            <li>Built by <a href="#">your agency</a></li>
+            <li class="copyright">&copy 2014</li>
+        </ul>
+    </footer>
 
 </body>
 </html>
