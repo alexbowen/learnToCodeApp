@@ -1,7 +1,9 @@
+var chatApp = {};
+
 $(document).ready(function () {
 
     // cache DOM elements
-    var content = $('#content'), input = $('#chat-input'), status = $('#status');
+    var content = $('#content'), input = $('#chat-input'), status = $('#status'), connected = false;
 
     // initialise my color variable to be assigned by the server
     var myColor = false;
@@ -25,13 +27,11 @@ $(document).ready(function () {
 
     connection.onopen = function () {
 
-        // first we want users to enter their names
-        input.removeAttr('disabled');
-        status.text('Choose name:');
+        chatApp.connected();
     };
 
     connection.onerror = function (error) {
-        console.log(error);
+
         // just in there were some problems with conenction...
         content.html($('<p>', { text: 'Sorry, but there\'s some problem with your '
                                     + 'connection or the server is down.' } ));
@@ -55,12 +55,12 @@ $(document).ready(function () {
         } else if (json.type === 'history') { // entire message history
             // insert every single message to the chat window
             for (var i=0; i < json.data.length; i++) {
-                addMessage(json.data[i].author, json.data[i].text,
+                chatApp.addMessage(json.data[i].author, json.data[i].text,
                            json.data[i].color, new Date(json.data[i].time));
             }
         } else if (json.type === 'message') { // it's a single message
             input.removeAttr('disabled'); // let the user write another message
-            addMessage(json.data.author, json.data.text,
+            chatApp.addMessage(json.data.author, json.data.text,
                        json.data.color, new Date(json.data.time));
         } else {
             console.log('Hmm..., I\'ve never seen JSON like this: ', json);
@@ -72,28 +72,40 @@ $(document).ready(function () {
      */
     input.keydown(function(e) {
         if (e.keyCode === 13) {
-            var msg = $(this).val();
-            if (!msg) {
-                return;
-            }
-            // send the message as an ordinary text
-            connection.send(msg);
-            $(this).val('');
-            // disable the input field to make the user wait until server
-            // sends back response
-            input.attr('disabled', 'disabled');
-
-            // we know that the first message sent from a user their name
-            if (myName === false) {
-                myName = msg;
-            }
+            chatApp.sendMessage($(this).val());
         }
     });
+
+    chatApp.connected = function () {
+
+        // first we want users to enter their names
+        input.removeAttr('disabled');
+        status.text('Choose name:');
+    }
+
+    chatApp.sendMessage = function (msg) {
+
+        if (!msg) {
+            return false;
+        }
+
+        // send the message as an ordinary text
+        connection.send(msg);
+        $(this).val('');
+        // disable the input field to make the user wait until server
+        // sends back response
+        input.attr('disabled', 'disabled');
+
+        // we know that the first message sent from a user their name
+        if (myName === false) {
+            myName = msg;
+        }
+    }
 
     /**
      * Add message to the chat window
      */
-    function addMessage(author, message, color, dt) {
+    chatApp.addMessage = function (author, message, color, dt) {
         content.prepend('<p><span style="color:' + color + '">' + author + '</span> @ ' +
              + (dt.getHours() < 10 ? '0' + dt.getHours() : dt.getHours()) + ':'
              + (dt.getMinutes() < 10 ? '0' + dt.getMinutes() : dt.getMinutes())

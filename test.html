@@ -23,18 +23,74 @@
             mocha.setup({globals: ['AFA', 'ExtBox1'], timeout : 3000});
             var expect = chai.expect;
 
-            describe("Chat Application", function () {
+            describe("Chat Application Structure", function () {
 
                 var title = $('h1').text();
-
-                var profile = $('#profile');
 
                 it("has correct title", function () {
                     expect(title).to.equal('Chat Application');
                 });
 
+                var profile = $('#profile');
+
                 it("has profile section", function () {
                     expect(profile).to.be.a('object');
+                    expect(profile.length).to.equal(1);
+                });
+
+                var chat = $('#chat');
+
+                it("has chat section", function () {
+                    expect(chat).to.be.a('object');
+                    expect(chat.length).to.equal(1);
+                });
+            });
+
+            describe("Chat Application Style", function () {
+
+                var title = $('h1');
+
+                it("title is black 24px tahoma font", function () {
+                    expect(title.css('font-family')).to.equal('tahoma');
+                    expect(title.css('font-size')).to.equal('24px');
+                    expect(title.css('color')).to.equal('rgb(255, 255, 255)');
+                });
+
+                var profileTitle = $('#profile h2');
+
+                it("profile title is black 20px tahoma font", function () {
+                    expect(profileTitle.css('font-family')).to.equal('tahoma');
+                    expect(profileTitle.css('font-size')).to.equal('20px');
+                    expect(profileTitle.css('color')).to.equal('rgb(255, 255, 255)');
+                });
+
+                var chatTitle = $('#chat h2');
+
+                it("chat title is black 20px tahoma font", function () {
+                    expect(chatTitle.css('font-family')).to.equal('tahoma');
+                    expect(chatTitle.css('font-size')).to.equal('20px');
+                    expect(chatTitle.css('color')).to.equal('rgb(255, 255, 255)');
+                });
+            });
+
+            describe("Chat Application connected", function () {
+
+                it("prompts user for their name", function () {
+                    expect(chatApp).to.be.a('object');
+
+                    chatApp.connected();
+
+                    var statusText = $('#status').text();
+
+                    expect(statusText).to.equal('Choose name:');
+                });
+            });
+
+            describe("Chat Application sendMessage", function () {
+
+                it("you cannot send an empty message", function () {
+                    expect(chatApp).to.be.a('object');
+                    expect(chatApp.sendMessage('')).to.equal(false);
                 });
             });
 
@@ -50,7 +106,7 @@
         <img src="img/logo.png" width="84" height="60" />
     </header>
     
-    <section class="profile">
+    <section class="profile" id="profile">
         <h2>Profile</h2>
         <div>
             <img src="img/alex.jpg" width="120" height="150" />
@@ -66,7 +122,7 @@
         <input type="text" id="chat-input" disabled="disabled" />
     </section>
 
-    <section class="chat">
+    <section class="chat" id="chat">
         <h2>Chat</h2>
         <div>
             <div id="content"></div>
