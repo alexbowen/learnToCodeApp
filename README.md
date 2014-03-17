@@ -1,8 +1,15 @@
 Chat app
 ========
 
+Install dependencies
+--------------------
+
 PC ```npm install```
 Mac ```sudo npm install```
 
+Start web server
+----------------
+
 ```node web-server```
-go to http://localhost:8000
+
+To run the app, go to http://localhost:8000
