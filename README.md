@@ -5,4 +5,4 @@ PC ```npm install```
 Mac ```sudo npm install```
 
 ```node web-server```
-```localhost:8000```
+go to http://localhost:8000
