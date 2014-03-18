@@ -91,7 +91,7 @@ $(document).ready(function () {
 
         // send the message as an ordinary text
         connection.send(msg);
-        $(this).val('');
+        input.val('');
         // disable the input field to make the user wait until server
         // sends back response
         input.attr('disabled', 'disabled');
