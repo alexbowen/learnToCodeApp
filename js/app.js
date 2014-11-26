@@ -3,10 +3,14 @@ var chatApp = {};
 $(document).ready(function () {
 
     // cache DOM elements
-    var content = $('#content'), input = $('#chat-input'), status = $('#status'), connected = false;
+    var content = $('#content'),
+        input = $('#chat-input'),
+        status = $('#status'),
+        connected = false;
 
     // initialise my color variable to be assigned by the server
     var myColor = false;
+
     // initialise my name variable sent to the server
     var myName = false;
 
@@ -30,9 +34,8 @@ $(document).ready(function () {
         chatApp.connected();
     };
 
+    //error handler
     connection.onerror = function (error) {
-
-        // just in there were some problems with conenction...
         content.html($('<p>', { text: 'Sorry, but there\'s some problem with your '
                                     + 'connection or the server is down.' } ));
     };
@@ -47,21 +50,27 @@ $(document).ready(function () {
             return;
         }
 
-        if (json.type === 'color') { // first response from the server with user's color
+        // first response from the server with user's color
+        if (json.type === 'color') {
             myColor = json.data;
             status.text(myName + ': connected').css('color', myColor);
             input.removeAttr('disabled').focus();
-            // from now user can start sending messages
-        } else if (json.type === 'history') { // entire message history
+
+        // entire message history
+        } else if (json.type === 'history') {
             // insert every single message to the chat window
             for (var i=0; i < json.data.length; i++) {
                 chatApp.addMessage(json.data[i].author, json.data[i].text,
                            json.data[i].color, new Date(json.data[i].time));
             }
-        } else if (json.type === 'message') { // it's a single message
+
+        // it's a single message
+        } else if (json.type === 'message') {
             input.removeAttr('disabled'); // let the user write another message
             chatApp.addMessage(json.data.author, json.data.text,
                        json.data.color, new Date(json.data.time));
+
+        //error
         } else {
             console.log('Error in JSON: ', json);
         }
@@ -92,8 +101,8 @@ $(document).ready(function () {
         // send the message as an ordinary text
         connection.send(msg);
         input.val('');
+
         // disable the input field to make the user wait until server
-        // sends back response
         input.attr('disabled', 'disabled');
 
         // we know that the first message sent from a user their name
