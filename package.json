@@ -14,9 +14,6 @@
   "devDependencies": {
     "chai": "1.5.0",
     "cucumber": "^0.4.4",
-    "mocha": "1.7.x",
-    "mocha-phantomjs": "2.0.x",
-    "phantomjs": "1.8.x",
     "protractor": "^1.4.0"
   },
   "engines": {
@@ -25,6 +22,6 @@
     "websocket": "1.0..x"
   },
   "scripts": {
-    "test": "mocha-phantomjs http://localhost:8000/test.html"
+    "test": "protractor protractor.conf.js"
   }
 }
