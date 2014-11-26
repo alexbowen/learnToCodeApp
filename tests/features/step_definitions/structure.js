@@ -1,31 +1,35 @@
 module.exports = function() {
   this.Given(/^I go to the web application$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
+    this.ptor.get('http://localhost:8000');
+    callback();
   });
 
   this.Then(/^i see a header section$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
-  });
-
-  this.Then(/^i see correct title in header$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
+    this.expect(element(by.css('header'))).to.exist;
+    callback();
   });
 
   this.Then(/^i see a profile section$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
+    this.expect(element(by.css('#profile'))).to.exist;
+    callback();
   });
 
   this.Then(/^i see a chat section$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
+    this.expect(element(by.id('chat'))).to.exist;
+    callback();
   });
 
   this.Then(/^i see a footer section$/, function (callback) {
-    // Write code here that turns the phrase above into concrete actions
-    callback.pending();
+    this.expect(element(by.css('footer'))).to.exist;
+    callback();
+  });
+
+  this.Then(/^i see correct title in header$/, function (callback) {
+    var expect = this.expect;
+
+    element(by.css('header h1')).getText().then(function(text) {
+      expect(text).to.equal('Chat Application');
+      callback();
+    });
   });
 }
