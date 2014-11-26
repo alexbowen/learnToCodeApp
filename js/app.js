@@ -63,7 +63,7 @@ $(document).ready(function () {
             chatApp.addMessage(json.data.author, json.data.text,
                        json.data.color, new Date(json.data.time));
         } else {
-            console.log('Hmm..., I\'ve never seen JSON like this: ', json);
+            console.log('Error in JSON: ', json);
         }
     };
 

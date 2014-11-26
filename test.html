@@ -25,9 +25,16 @@
 
             describe("Chat Application Structure", function () {
 
-                var title = $('h1').text();
+                var header = $('header');
 
-                it("has correct title", function () {
+                it("has header section", function () {
+                    expect(header).to.be.a('object');
+                    expect(header.length).to.equal(1);
+                });
+
+                var title = $('header h1').text();
+
+                it("has correct title in header", function () {
                     expect(title).to.equal('Chat Application');
                 });
 
@@ -43,6 +50,13 @@
                 it("has chat section", function () {
                     expect(chat).to.be.a('object');
                     expect(chat.length).to.equal(1);
+                });
+
+                var footer = $('footer');
+
+                it("has footer section", function () {
+                    expect(footer).to.be.a('object');
+                    expect(footer.length).to.equal(1);
                 });
             });
 
