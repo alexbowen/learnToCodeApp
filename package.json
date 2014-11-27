@@ -1,28 +1,27 @@
 {
   "name": "chatapp",
   "version": "0.0.1",
-  "contributors" : [
+  "contributors": [
     {
-      "name" : "Alex Bowen",
-      "email" : "alex.bowen@alexbowen123@googlemail.com"
+      "name": "Alex Bowen",
+      "email": "alex.bowen@alexbowen123@googlemail.com"
     }
   ],
   "dependencies": {
-     "socket.io" : "0.9.x",
-     "express"   : "3.0.x"
+    "socket.io": "0.9.x",
+    "express": "3.0.x"
   },
   "devDependencies": {
-     "mocha"           : "1.7.x",
-     "chai"            : "1.5.0",
-     "phantomjs"       : "1.8.x",
-     "mocha-phantomjs" : "2.0.x"
+    "chai": "1.5.0",
+    "cucumber": "^0.4.4",
+    "protractor": "^1.4.0"
   },
   "engines": {
-      "node"  : "0.8.x",
-      "npm"   : "1.1.x",
-      "websocket" : "1.0..x"
+    "node": "0.8.x",
+    "npm": "1.1.x",
+    "websocket": "1.0..x"
   },
-    "scripts" : {
-      "test" : "mocha-phantomjs http://localhost:8000/test.html"
+  "scripts": {
+    "test": "protractor protractor.conf.js"
   }
 }
