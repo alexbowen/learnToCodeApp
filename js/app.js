@@ -25,6 +25,4 @@ $(document).ready(function () {
             return false;
         }
     }
-
-    //chatApp.connected();
 });
