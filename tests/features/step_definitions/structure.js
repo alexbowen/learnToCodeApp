@@ -1,9 +1,4 @@
 module.exports = function() {
-  this.Given(/^I go to the web application$/, function (callback) {
-    this.ptor.get('http://localhost:8000');
-    callback();
-  });
-
   this.Then(/^i see a header section$/, function (callback) {
     this.expect(element(by.css('header'))).to.exist;
     callback();
@@ -32,4 +27,4 @@ module.exports = function() {
       callback();
     });
   });
-}
+};
