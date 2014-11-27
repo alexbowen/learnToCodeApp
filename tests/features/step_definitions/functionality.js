@@ -13,13 +13,18 @@ module.exports = function() {
         });
     });
 
-    this.When(/^the user sends an empty message$/, function (callback) {
-        element(by.id('chat-input')).sendKeys('');
+    this.When(/^the user enters a name$/, function (callback) {
+        element(by.id('chat-input')).sendKeys('Alex');
         element(by.id('chat-input')).sendKeys(protractor.Key.ENTER);
         callback();
     });
 
-    this.Then(/^the message is not sent$/, function (callback) {
-    	callback.pending();
+    this.Then(/^the user name appears as connected$/, function (callback) {
+        var expect = this.expect;
+
+        element(by.id('status')).getText().then(function(text) {
+            expect(text).to.equal('Alex: connected');
+            callback();
+        });
     });
 };

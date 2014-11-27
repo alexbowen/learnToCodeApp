@@ -5,6 +5,9 @@ $(document).ready(function () {
     // cache DOM elements
     var input = $('#chat-input'), status = $('#status');
 
+    // initialise my name variable sent to the server
+    var myName = false;
+
     /**
      * Send mesage when user presses Enter key
      */
@@ -21,8 +24,12 @@ $(document).ready(function () {
 
     chatApp.sendMessage = function (msg) {
         console.log('send message ' + msg);
-        if (!msg) {
-            return false;
+        
+        // we know that the first message sent from a user their name
+        if (myName === false) {
+            myName = msg;
         }
+
+        status.text(myName + ': connected')
     }
 });
