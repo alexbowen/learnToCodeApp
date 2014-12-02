@@ -7,22 +7,22 @@ module.exports = function() {
     this.Then(/^the user is prompted for a name$/, function (callback) {
         var expect = this.expect;
 
-        element(by.id('status')).getText().then(function(text) {
+        element(by.css('#status')).getText().then(function(text) {
             expect(text).to.equal('Choose name:');
             callback();
         });
     });
 
     this.When(/^the user enters a name$/, function (callback) {
-        element(by.id('chat-input')).sendKeys('Alex');
-        element(by.id('chat-input')).sendKeys(protractor.Key.ENTER);
-        callback();
+        element(by.css('#chat-input')).sendKeys('Alex').then(function () {
+            element(by.css('#chat-input')).sendKeys(protractor.Key.ENTER).then(callback);
+        });
     });
 
     this.Then(/^the user name appears as connected$/, function (callback) {
         var expect = this.expect;
 
-        element(by.id('status')).getText().then(function(text) {
+        element(by.css('#status')).getText().then(function(text) {
             expect(text).to.equal('Alex: connected');
             callback();
         });
