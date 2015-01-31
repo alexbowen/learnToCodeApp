@@ -22,6 +22,7 @@ Install dependencies
 
 PC ```npm install```
 Mac ```sudo npm install```
+./node_modules/protractor/bin/webdriver-manager update
 
 Start web server
 ----------------
