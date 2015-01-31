@@ -9,6 +9,10 @@ Google chrome browser
 GIT
 Node.js
 
+or
+
+Cloud 9 IDE
+
 Get code
 --------
 
@@ -22,7 +26,10 @@ Install dependencies
 
 PC ```npm install```
 Mac ```sudo npm install```
-./node_modules/protractor/bin/webdriver-manager update
+
+install webdriver
+
+```./node_modules/protractor/bin/webdriver-manager update```
 
 Start web server
 ----------------
