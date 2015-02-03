@@ -1,0 +1,30 @@
+[INFO  - 2015-02-03T05:20:14.769Z] GhostDriver - Main - running on port 44822
+[INFO  - 2015-02-03T05:20:14.956Z] Session [559efe80-ab64-11e4-acb9-b7f5243b8469] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34","webSecurityEnabled":true}
+[INFO  - 2015-02-03T05:20:14.956Z] Session [559efe80-ab64-11e4-acb9-b7f5243b8469] - page.customHeaders:  - {}
+[INFO  - 2015-02-03T05:20:14.956Z] Session [559efe80-ab64-11e4-acb9-b7f5243b8469] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.8","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"mac-10.10 (Yosemite)-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-02-03T05:20:14.956Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 559efe80-ab64-11e4-acb9-b7f5243b8469
+[ERROR - 2015-02-03T05:20:15.559Z] Session [559efe80-ab64-11e4-acb9-b7f5243b8469] - page.onError - msg: INVALID_STATE_ERR: DOM Exception 11: An attempt was made to use an object that is not, or is no longer, usable.
+[ERROR - 2015-02-03T05:20:15.559Z] Session [559efe80-ab64-11e4-acb9-b7f5243b8469] - page.onError - stack:
+  (anonymous function) (http://localhost:8000/js/app.js:102)
+  (anonymous function) (http://localhost:8000/js/app.js:84)
+  (anonymous function) (http://localhost:8000/js/jquery.js:3)
+  (anonymous function) (http://localhost:8000/js/jquery.js:3)
+[INFO  - 2015-02-03T05:20:19.050Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-02-03T05:22:17.032Z] GhostDriver - Main - running on port 31682
+[INFO  - 2015-02-03T05:22:17.195Z] Session [9e7b2f70-ab64-11e4-a98a-1f96d7300f7c] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34","webSecurityEnabled":true}
+[INFO  - 2015-02-03T05:22:17.196Z] Session [9e7b2f70-ab64-11e4-a98a-1f96d7300f7c] - page.customHeaders:  - {}
+[INFO  - 2015-02-03T05:22:17.196Z] Session [9e7b2f70-ab64-11e4-a98a-1f96d7300f7c] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.8","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"mac-10.10 (Yosemite)-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-02-03T05:22:17.196Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: 9e7b2f70-ab64-11e4-a98a-1f96d7300f7c
+[ERROR - 2015-02-03T05:22:17.811Z] Session [9e7b2f70-ab64-11e4-a98a-1f96d7300f7c] - page.onError - msg: INVALID_STATE_ERR: DOM Exception 11: An attempt was made to use an object that is not, or is no longer, usable.
+[ERROR - 2015-02-03T05:22:17.811Z] Session [9e7b2f70-ab64-11e4-a98a-1f96d7300f7c] - page.onError - stack:
+  (anonymous function) (http://localhost:8000/js/app.js:102)
+  (anonymous function) (http://localhost:8000/js/app.js:84)
+  (anonymous function) (http://localhost:8000/js/jquery.js:3)
+  (anonymous function) (http://localhost:8000/js/jquery.js:3)
+[INFO  - 2015-02-03T05:22:21.391Z] ShutdownReqHand - _handle - About to shutdown
+[INFO  - 2015-02-03T05:22:47.703Z] GhostDriver - Main - running on port 37265
+[INFO  - 2015-02-03T05:22:47.833Z] Session [b0be2c50-ab64-11e4-97b8-61f06e637dea] - page.settings - {"XSSAuditingEnabled":false,"javascriptCanCloseWindows":true,"javascriptCanOpenWindows":true,"javascriptEnabled":true,"loadImages":true,"localToRemoteUrlAccessEnabled":false,"userAgent":"Mozilla/5.0 (Macintosh; Intel Mac OS X) AppleWebKit/534.34 (KHTML, like Gecko) PhantomJS/1.9.8 Safari/534.34","webSecurityEnabled":true}
+[INFO  - 2015-02-03T05:22:47.834Z] Session [b0be2c50-ab64-11e4-97b8-61f06e637dea] - page.customHeaders:  - {}
+[INFO  - 2015-02-03T05:22:47.834Z] Session [b0be2c50-ab64-11e4-97b8-61f06e637dea] - Session.negotiatedCapabilities - {"browserName":"phantomjs","version":"1.9.8","driverName":"ghostdriver","driverVersion":"1.1.0","platform":"mac-10.10 (Yosemite)-32bit","javascriptEnabled":true,"takesScreenshot":true,"handlesAlerts":false,"databaseEnabled":false,"locationContextEnabled":false,"applicationCacheEnabled":false,"browserConnectionEnabled":false,"cssSelectorsEnabled":true,"webStorageEnabled":false,"rotatable":false,"acceptSslCerts":false,"nativeEvents":true,"proxy":{"proxyType":"direct"}}
+[INFO  - 2015-02-03T05:22:47.834Z] SessionManagerReqHand - _postNewSessionCommand - New Session Created: b0be2c50-ab64-11e4-97b8-61f06e637dea
+[INFO  - 2015-02-03T05:22:47.938Z] ShutdownReqHand - _handle - About to shutdown
