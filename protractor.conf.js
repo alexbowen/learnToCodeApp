@@ -1,13 +1,12 @@
 exports.config = {
     "framework": "cucumber",
-    "seleniumAddress": 'http://localhost:4444/wd/hub',
+    "seleniumServerJar": './node_modules/protractor/selenium/selenium-server-standalone-2.42.2.jar',
     "specs": ["tests/features/*.feature"],
     "cucumberOpts": {
         "format": "pretty"
     },
     "capabilities" : {
-        "browserName": "chrome"
+        "browserName": "phantomjs",
+        "phantomjs.binary.path" : require('phantomjs').path
     }
 };
-
-//webdriver-manager update
