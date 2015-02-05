@@ -16,7 +16,7 @@ Cloud 9 IDE
 Get code
 --------
 
-```git clone ...```
+```git clone https://github.com/alexbowen/learnToCodeApp.git```
 ```git checkout failHtml```
 
 add folder to sublime text
