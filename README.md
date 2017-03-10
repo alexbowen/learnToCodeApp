@@ -1,6 +1,8 @@
 Chat app
 ========
 
+[![Greenkeeper badge](https://badges.greenkeeper.io/alexbowen/learnToCodeApp.svg)](https://greenkeeper.io/)
+
 download
 --------
 
